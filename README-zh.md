@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="#兼容范围"><img src="https://img.shields.io/badge/Minecraft-1.21.4%E2%80%9326.3-3fb950" alt="Minecraft 1.21.4–26.3"></a>
+  <a href="#兼容范围"><img src="https://img.shields.io/badge/Minecraft-26.1.x%E2%80%9326.3-3fb950" alt="Minecraft 26.1.x–26.3"></a>
   <a href="#兼容范围"><img src="https://img.shields.io/badge/Java-25-orange" alt="Java 25"></a>
   <a href="#兼容范围"><img src="https://img.shields.io/badge/Paper-supported-blue" alt="Paper supported"></a>
   <a href="#兼容范围"><img src="https://img.shields.io/badge/Folia-supported-blueviolet" alt="Folia supported"></a>
@@ -28,15 +28,13 @@ PhantomCreeper 是一个“幻翼 + 苦力怕”复合生物：像幻翼一样�
 
 ## 兼容范围
 
-- 服务端：Paper 或 Folia 1.21.4～26.3
-（已在 Paper26.3、Folia26.3 测试，其他版本未测试）
-- Java：25
+- 服务端：Paper 或 Folia 26.1.x～26.3
+  （已在 Paper 26.3、Folia 26.3 测试，其他版本未测试）
+- Java：必须使用 Java 25，不兼容 Java 21
 - 生物模型引擎（二选一）：
   - BetterModel 3.6.0 或更高（本项目参考版本为 3.7.0）
   - ModelEngine 4.1.1 或更高（Free 与 Premium 均可）
 - 资源包托管：CraftEngine、ItemsAdder 或其他能合并模型引擎资源的插件
-
-插件编译基线为 Paper API 1.21.4，因此当前发布包面向 Paper/Folia 1.21.4～26.3.x。
 
 > 已知问题：目前在 ModelEngine 引擎下，模型飞行时会有轻微卡顿；BetterModel 下飞行流畅。该问题目前尚未修复。
 

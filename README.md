@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="#compatibility"><img src="https://img.shields.io/badge/Minecraft-1.21.4%E2%80%9326.3-3fb950" alt="Minecraft 1.21.4–26.3"></a>
+  <a href="#compatibility"><img src="https://img.shields.io/badge/Minecraft-26.1.x%E2%80%9326.3-3fb950" alt="Minecraft 26.1.x–26.3"></a>
   <a href="#compatibility"><img src="https://img.shields.io/badge/Java-25-orange" alt="Java 25"></a>
   <a href="#compatibility"><img src="https://img.shields.io/badge/Paper-supported-blue" alt="Paper supported"></a>
   <a href="#compatibility"><img src="https://img.shields.io/badge/Folia-supported-blueviolet" alt="Folia supported"></a>
@@ -28,15 +28,13 @@ PhantomCreeper is a hybrid Phantom and Creeper mob. It flies like a Phantom, app
 
 ## Compatibility
 
-- Server: Paper or Folia 1.21.4–26.3.
+- Server: Paper or Folia 26.1.x–26.3.
   (Tested on Paper 26.3 and Folia 26.3; other versions have not been tested.)
-- Java: 25.
+- Java: 25 required. The plugin is not compatible with Java 21.
 - Model engine (choose one):
   - BetterModel 3.6.0 or newer (the reference version for this project is 3.7.0).
   - ModelEngine 4.1.1 or newer (Free and Premium are both supported).
 - Resource-pack hosting: CraftEngine, ItemsAdder, or another plugin capable of merging model-engine resources.
-
-The plugin is compiled against Paper API 1.21.4, so the current release targets Paper and Folia 1.21.4–26.3.x.
 
 > Known issue: Model flight currently has slight stuttering under ModelEngine. Flight is smooth under BetterModel. This issue has not yet been fixed.
 
