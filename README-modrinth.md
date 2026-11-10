@@ -236,5 +236,5 @@ If this project is useful to you, you can support development through Ko-fi or A
 <br><br><br>
 
 <p align="center">
-  <img src="img/logo.png" alt="PhantomCreeper logo" height="128">
+  <img src="https://raw.githubusercontent.com/che11111/PhantomCreeper/main/img/logo.png" alt="PhantomCreeper logo" height="128">
 </p>
