@@ -1,7 +1,7 @@
 # PhantomCreeper
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/che11111/PhantomCreeper/main/img/gif.png" alt="PhantomCreeper logo" height="256">
+  <img src="https://raw.githubusercontent.com/che11111/PhantomCreeper/main/img/logo.gif" alt="PhantomCreeper logo" height="256">
 </p>
 
 <p align="center">
