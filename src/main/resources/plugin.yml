@@ -1,0 +1,28 @@
+name: PhantomCreeper
+version: '${project.version}'
+main: dev.che1s.phantomcreeper.PhantomCreeperPlugin
+api-version: '1.21'
+load: POSTWORLD
+folia-supported: true
+description: 支持 BetterModel 与 ModelEngine 渲染的幻翼与苦力怕混合生物。
+authors: [che1s]
+softdepend:
+  - BetterModel
+  - ModelEngine
+  - PlaceholderAPI
+libraries:
+  - "org.xerial:sqlite-jdbc:${sqlite.version}"
+
+commands:
+  phantomcreeper:
+    description: 管理幻翼苦力怕。
+    usage: /phantomcreeper <stats|spawn|removeall|reload|info|engine>
+    aliases: [pcreeper]
+
+permissions:
+  phantomcreeper.stats:
+    description: 允许查看自己的幻翼苦力怕击杀与死亡统计。
+    default: true
+  phantomcreeper.admin:
+    description: 允许管理幻翼苦力怕。
+    default: op

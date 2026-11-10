@@ -1,0 +1,54 @@
+prefix: "<dark_aqua>PhantomCreeper</dark_aqua> <dark_gray>»</dark_gray> "
+
+command:
+  player-only: "<red>This subcommand can only be used by a player.</red>"
+  usage: "<yellow>Usage: /phantomcreeper <stats|spawn [player]|removeall|reload|info|engine></yellow>"
+  spawn-success: "<green>PhantomCreeper spawned.</green>"
+  spawn-failed: "<red>Could not spawn PhantomCreeper at that location.</red>"
+  player-not-found: "<red>Online player <white><player></white> was not found.</red>"
+  no-permission: "<red>You do not have permission to use this command.</red>"
+  removed: "<yellow>Removed <white><count></white> PhantomCreeper(s).</yellow>"
+  reloaded: "<green>Configuration and language files reloaded.</green>"
+  reload-failed: "<red>Configuration reload failed. Check the console.</red>"
+  info: "<gray>Alive: <white><count></white>; Natural: <white><natural>/<natural_limit></white>; Health: <white><health></white>; Hitboxes: <white><hitboxes></white>; Model: <white><model></white>; Engine: <white><engine></white>; Position: <white><position></white>; Velocity: <white><velocity></white></gray>"
+  stats: "<gray>Your statistics: PhantomCreeper kills <white><kills></white>; deaths caused by PhantomCreeper <white><deaths></white>.</gray>"
+  engine-usage: "<yellow>Usage: /phantomcreeper engine <bettermodel|modelengine></yellow>"
+  engine-unavailable: "<red>Cannot switch to <engine>. Available engines: <available>.</red>"
+  engine-switched: "<green>Model engine switched to <engine>; existing PhantomCreepers are being rebound.</green>"
+
+model:
+  loading: "Loading model phantom_creeper..."
+  loaded: "Model <model> loaded through <engine>."
+  missing: "Model <model> is not available yet; using the vanilla Creeper temporarily."
+  failed: "Could not attach the <engine> model. Check that model engine's startup logs."
+
+status:
+  loaded: "loaded"
+  waiting: "waiting"
+
+log:
+  paper-scheduler: "Paper scheduler mode enabled."
+  folia-scheduler: "Folia region scheduler mode enabled."
+  data-directory-failed: "Could not create the plugin data directory."
+  stats-open-failed: "Could not open the SQLite statistics database."
+  stats-save-failed: "Could not save PhantomCreeper statistics."
+  bstats-init-failed: "Could not initialize bStats metrics."
+  reload-failed: "Could not reload configuration: <error>"
+  placeholder-register-failed: "Could not register the PlaceholderAPI expansion."
+  placeholder-unregister-failed: "Could not unregister the PlaceholderAPI expansion."
+  spawn-failed: "Could not spawn PhantomCreeper: <error>"
+  model-resource-missing: "The PhantomCreeper model resource is missing from the plugin JAR."
+  model-backend-missing: "No usable model engine was found for <engine>. Install BetterModel or ModelEngine 4.1.1+."
+  model-backend-selected: "Selected model engine: <engine>."
+  modelengine-blueprint-installed: "Installed the ModelEngine blueprint: <path>"
+  modelengine-blueprint-install-failed: "Could not install the ModelEngine blueprint: <error>"
+  modelengine-invalid-model-name: "Invalid ModelEngine model name: <name>"
+  modelengine-import-incomplete: "ModelEngine could not import compatible blueprint <name>. Check the ModelEngine log."
+  modelengine-attach-failed: "Could not attach the ModelEngine model to the entity: <error>"
+  modelengine-death-effect-failed: "Could not play the ModelEngine death animation: <error>"
+
+creature:
+  name: "<dark_gray>PhantomCreeper</dark_gray>"
+
+resourcepack:
+  description: "PhantomCreeper resource pack · Author: che1s"

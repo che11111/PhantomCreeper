@@ -1,0 +1,54 @@
+prefix: "<dark_aqua>[幻翼苦力怕]</dark_aqua> <dark_gray>»</dark_gray> "
+
+command:
+  player-only: "<red>这个子命令只能由玩家执行。</red>"
+  usage: "<yellow>用法：/phantomcreeper <stats|spawn [玩家]|removeall|reload|info|engine></yellow>"
+  spawn-success: "<green>已召唤幻翼苦力怕。</green>"
+  spawn-failed: "<red>无法在该位置召唤幻翼苦力怕。</red>"
+  player-not-found: "<red>找不到在线玩家 <white><player></white>。</red>"
+  no-permission: "<red>你没有权限执行此命令。</red>"
+  removed: "<yellow>已移除 <white><count></white> 只幻翼苦力怕。</yellow>"
+  reloaded: "<green>配置和语言文件已重新加载。</green>"
+  reload-failed: "<red>配置重新加载失败，请查看控制台。</red>"
+  info: "<gray>当前存活：<white><count></white>；自然生成：<white><natural>/<natural_limit></white>；生命：<white><health></white>；命中箱：<white><hitboxes></white>；模型：<white><model></white>；引擎：<white><engine></white>；位置：<white><position></white>；速度：<white><velocity></white></gray>"
+  stats: "<gray>你的统计：击杀幻翼苦力怕 <white><kills></white> 只；被幻翼苦力怕炸死 <white><deaths></white> 次。</gray>"
+  engine-usage: "<yellow>用法：/phantomcreeper engine <bettermodel|modelengine></yellow>"
+  engine-unavailable: "<red>无法切换为 <engine>，当前可用引擎：<available>。</red>"
+  engine-switched: "<green>模型引擎已切换为 <engine>，现有幻翼苦力怕正在重新绑定。</green>"
+
+model:
+  loading: "正在加载模型 phantom_creeper..."
+  loaded: "模型 <model> 已通过 <engine> 加载。"
+  missing: "尚未找到模型 <model>；实体暂时使用原版苦力怕外观。"
+  failed: "无法附加 <engine> 模型，请检查对应模型引擎的启动日志。"
+
+status:
+  loaded: "已加载"
+  waiting: "等待中"
+
+log:
+  paper-scheduler: "已启用 Paper 调度模式。"
+  folia-scheduler: "已启用 Folia 区域调度模式。"
+  data-directory-failed: "无法创建插件数据目录。"
+  stats-open-failed: "无法打开 SQLite 统计数据库。"
+  stats-save-failed: "无法保存幻翼苦力怕统计数据。"
+  bstats-init-failed: "无法初始化 bStats 统计。"
+  reload-failed: "无法重新加载配置：<error>"
+  placeholder-register-failed: "无法注册 PlaceholderAPI 扩展。"
+  placeholder-unregister-failed: "无法注销 PlaceholderAPI 扩展。"
+  spawn-failed: "无法生成幻翼苦力怕：<error>"
+  model-resource-missing: "插件 JAR 内缺少幻翼苦力怕模型资源。"
+  model-backend-missing: "没有找到可用的模型引擎：<engine>。请安装 BetterModel 或 ModelEngine 4.1.1+。"
+  model-backend-selected: "已选择模型引擎：<engine>。"
+  modelengine-blueprint-installed: "已安装 ModelEngine 蓝图：<path>"
+  modelengine-blueprint-install-failed: "无法安装 ModelEngine 蓝图：<error>"
+  modelengine-invalid-model-name: "ModelEngine 模型名称不合法：<name>"
+  modelengine-import-incomplete: "ModelEngine 未能导入兼容蓝图 <name>，请检查 ModelEngine 日志。"
+  modelengine-attach-failed: "无法将 ModelEngine 模型附加到生物：<error>"
+  modelengine-death-effect-failed: "无法播放 ModelEngine 死亡动画：<error>"
+
+creature:
+  name: "<dark_gray>幻翼苦力怕</dark_gray>"
+
+resourcepack:
+  description: "幻翼苦力怕资源包 · 作者：che1s"

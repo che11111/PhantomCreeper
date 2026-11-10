@@ -1,0 +1,217 @@
+# PhantomCreeper / 幻翼苦力怕
+# 修改模型设置后需重启服务器；其他配置可使用 /phantomcreeper reload。
+# Restart the server after changing model settings; other settings can use /phantomcreeper reload.
+
+# 插件语言：zh_cn（简体中文）或 en_us（英文）。
+# Plugin language: zh_cn (Simplified Chinese) or en_us (English).
+language: zh_cn
+
+model:
+  # 渲染后端：auto、bettermodel 或 modelengine。
+  # Renderer backend: auto, bettermodel, or modelengine.
+  # auto 会优先使用 BetterModel，未安装时自动改用 ModelEngine。
+  # auto prefers BetterModel and automatically uses ModelEngine when BetterModel is absent.
+  engine: auto
+  # 两个模型引擎共用的模型名称，通常不需要修改。
+  # Shared model name for both model engines; normally no change is needed.
+  name: phantom_creeper
+  # 模型整体缩放倍数。
+  # Overall model scale multiplier.
+  scale: 1.25
+  # 飞行时循环播放的扇翼动画名称。
+  # Looping wing-flap animation name used while flying.
+  flap-animation: flap
+  # 使用 ModelEngine 时，将插件内置的兼容蓝图自动安装到
+  # plugins/ModelEngine/blueprints/phantom_creeper.bbmodel。
+  # With ModelEngine, install the bundled compatible blueprint to
+  # plugins/ModelEngine/blueprints/phantom_creeper.bbmodel automatically.
+  modelengine-auto-install-blueprint: true
+  # 模型不可用时是否保留原版苦力怕载体作为可见兜底。
+  # Keep the vanilla Creeper carrier visible as a fallback when the model is unavailable.
+  keep-base-phantom-visible-if-model-fails: true
+
+targeting:
+  # 生物开始追踪玩家的最大距离。
+  # Maximum distance at which the creature starts tracking a player.
+  acquire-range: 48.0
+  # 已有目标离开该距离后放弃追踪。
+  # Drop the current target after it moves beyond this distance.
+  lose-range: 64.0
+  # 是否忽略创造模式玩家。
+  # Whether to ignore players in Creative mode.
+  ignore-creative: true
+  # 是否忽略旁观模式玩家。
+  # Whether to ignore players in Spectator mode.
+  ignore-spectator: true
+  # 是否要求实体与玩家之间没有方块阻挡；开启会增加视线检测成本。
+  # Require an unobstructed line of sight; enabling this increases visibility-check cost.
+  require-line-of-sight: false
+
+movement:
+  # 远距离巡航速度，单位为格/tick；0.32 约为每秒 6.4 格。
+  # Long-range cruise speed in blocks per tick; 0.32 is about 6.4 blocks per second.
+  cruise-speed: 0.32
+  # 近距离追击速度，单位为格/tick。
+  # Close-range chase speed in blocks per tick.
+  chase-speed: 0.48
+  # 所有飞行速度的硬上限。
+  # Hard upper limit for all flight speeds.
+  max-speed: 0.68
+  # 速度变化平滑系数，范围 0.0～1.0；越大转向越快。
+  # Velocity smoothing factor from 0.0 to 1.0; larger values turn faster.
+  acceleration: 0.20
+  # 远距离巡航时保持在目标上方的高度。
+  # Cruise height above the target during long-range movement.
+  cruise-height: 6.0
+  # 近距离俯冲时瞄准目标脚部以上的高度。
+  # Strike height above the target's feet during a close-range dive.
+  strike-height: 1.2
+  # 进入近距离攻击阶段和切换追击速度的距离。
+  # Horizontal distance for entering close attack mode and chase speed.
+  close-range: 8.0
+  # 无目标时环绕巡逻点的半径。
+  # Orbit radius around the patrol point when no target is available.
+  waypoint-radius: 3.5
+  # 垂直飞行或返航时允许离开初始生成点的最大距离。
+  # Maximum distance from the initial spawn point while flying or returning home.
+  max-distance-from-home: 72.0
+  # 多个个体飞行时希望保持的避让距离；不会阻止同位置生成。
+  # Preferred separation distance between creatures; spawning at the same position is still allowed.
+  minimum-separation: 6.0
+
+combat:
+  # 幻翼苦力怕的最大生命值。
+  # Maximum health of PhantomCreeper.
+  max-health: 24.0
+  # 进入爆炸引信状态所需的玩家距离。
+  # Player distance required to start the explosion fuse.
+  trigger-radius: 2.8
+  # 引信时长，20 tick 为 1 秒。
+  # Fuse duration in ticks; 20 ticks equals one second.
+  fuse-ticks: 30
+  # 玩家离开该距离后取消引信并恢复追击。
+  # Cancel the fuse and resume chasing when the player leaves this radius.
+  fuse-cancel-radius: 7.0
+
+  explosion:
+    # 爆炸范围，单位为格；内部按该值计算 Minecraft 爆炸威力。
+    # Explosion radius in blocks; internally converted to Minecraft explosion power.
+    radius: 6.0
+    # 爆心原始伤害，在护甲、附魔和受伤无敌判定之前生效。
+    # Raw center damage before armor, enchantments, and damage immunity are applied.
+    damage: 40.0
+    # 是否随距离线性降低伤害；关闭时范围内始终使用完整伤害。
+    # Whether damage falls off with distance; when disabled, full damage applies in range.
+    damage-falloff: true
+    # 是否允许爆炸破坏方块，默认关闭。
+    # Whether the explosion may break blocks; disabled by default.
+    break-blocks: false
+    # 爆炸后是否生成火焰。
+    # Whether the explosion creates fire.
+    set-fire: false
+    # 爆炸是否允许伤害幻翼苦力怕自身。
+    # Whether the explosion may damage PhantomCreeper itself.
+    damage-self: false
+
+  # 被玩家击杀时掉落的幻翼膜数量。
+  # Number of Phantom Membranes dropped when killed by a player.
+  drop-phantom-membrane: 2
+  # 被玩家击杀时掉落的火药数量。
+  # Amount of gunpowder dropped when killed by a player.
+  drop-gunpowder: 2
+  # 被击杀时掉落的经验，至少为该值。
+  # Minimum experience dropped when killed.
+  dropped-experience: 20
+
+natural-spawn:
+  # 是否启用自然生成机制。
+  # Whether natural spawning is enabled.
+  enabled: true
+  # 检查生成条件的间隔，20 tick 为 1 秒。
+  # Interval between spawn-condition checks; 20 ticks equals one second.
+  check-interval-ticks: 200
+  # Minecraft 夜晚开始时间。
+  # Minecraft night start time.
+  night-start-time: 13000
+  # Minecraft 夜晚结束时间。
+  # Minecraft night end time.
+  night-end-time: 23000
+  # 是否只在主世界执行自然生成。
+  # Whether natural spawning is limited to the Overworld.
+  only-overworld: true
+  # 自然生成个体存活上限；管理员指令生成不计入此上限。
+  # Maximum living naturally spawned creatures; admin spawning does not count toward this limit.
+  max-active: 10
+  # 包括管理员生成在内的全部存活硬上限。
+  # Global hard limit for all living creatures, including admin-spawned creatures.
+  max-tracked: 20
+
+  spawn-area:
+    # 生成点距离玩家水平方向的最小距离。
+    # Minimum horizontal distance from the player when choosing a spawn point.
+    min-distance: 18.0
+    # 生成点距离玩家水平方向的最大距离。
+    # Maximum horizontal distance from the player when choosing a spawn point.
+    max-distance: 32.0
+    # 生成点高于玩家的最小高度。
+    # Minimum height offset above the player when choosing a spawn point.
+    min-height-offset: 6.0
+    # 生成点高于玩家的最大高度。
+    # Maximum height offset above the player when choosing a spawn point.
+    max-height-offset: 12.0
+
+  # 机制 A：根据当前世界难度，每名玩家每个夜晚判定一次。
+  # Mechanism A: roll once per player per night based on the current world difficulty.
+  nightly-difficulty-spawn:
+    # 是否启用机制 A。
+    # Whether mechanism A is enabled.
+    enabled: true
+    # 判定成功后一次生成的数量。
+    # Number spawned after a successful roll.
+    spawn-count: 1
+    chances:
+      # Easy 难度触发概率；0.05 表示 5%。
+      # Easy-difficulty chance; 0.05 means 5%.
+      easy: 0.05
+      # Normal 难度触发概率；0.10 表示 10%。
+      # Normal-difficulty chance; 0.10 means 10%.
+      normal: 0.10
+      # Hard 难度触发概率；0.20 表示 20%。
+      # Hard-difficulty chance; 0.20 means 20%.
+      hard: 0.20
+
+  # 机制 B：附近原版幻翼达到阈值时，每名玩家每个夜晚判定一次。
+  # Mechanism B: roll once per player per night when nearby vanilla Phantom counts reach a threshold.
+  phantom-threshold-spawn:
+    # 是否启用机制 B。
+    # Whether mechanism B is enabled.
+    enabled: true
+    # 统计原版幻翼数量的球体半径。
+    # Sphere radius used to count nearby vanilla Phantoms.
+    scan-radius: 32.0
+    triggers:
+      # 附近有 3 只原版幻翼时生成 1 只幻翼苦力怕。
+      # Spawn one PhantomCreeper when three vanilla Phantoms are nearby.
+      - phantom-count: 3
+        spawn-count: 1
+      # 附近有 6 只原版幻翼时生成 2 只幻翼苦力怕。
+      # Spawn two PhantomCreepers when six vanilla Phantoms are nearby.
+      - phantom-count: 6
+        spawn-count: 2
+
+  # 允许自然生成的世界名。留空表示所有世界，但仍受 only-overworld 限制。
+  # Worlds allowed for natural spawning. Empty means all worlds, still subject to only-overworld.
+  worlds:
+    - world
+
+safety:
+  # 区块卸载时是否立即移除插件管理的生物。
+  # Whether to remove managed creatures immediately when their chunk unloads.
+  remove-on-chunk-unload: true
+  # 生物存活达到该 tick 数后自动移除；12000 tick 为 10 分钟，0 表示不自动移除。
+  # Remove after this many ticks; 12000 ticks equals 10 minutes, and 0 disables auto-removal.
+  despawn-after-ticks: 12000
+
+# 是否启用 bStats 匿名统计。
+# Whether to enable anonymous bStats metrics.
+bstats-enabled: true
