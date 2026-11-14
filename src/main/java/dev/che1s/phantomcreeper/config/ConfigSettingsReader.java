@@ -40,7 +40,7 @@ final class ConfigSettingsReader {
                 config.getDouble("natural-spawn.spawn-area.max-height-offset", 12.0), 12.0);
 
         return new PluginSettings(
-                config.getString("language", "zh_cn").toLowerCase(Locale.ROOT),
+                config.getString("language", "auto").toLowerCase(Locale.ROOT),
                 config.getBoolean("bstats-enabled", true),
                 new PluginSettings.Model(
                         nonBlank(config.getString("model.engine", "auto"), "auto")

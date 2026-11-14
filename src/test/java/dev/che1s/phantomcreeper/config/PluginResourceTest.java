@@ -19,6 +19,7 @@ class PluginResourceTest {
     @Test
     void packagedConfigContainsSafeExplosionDefaults() {
         Map<String, Object> root = yaml("config.yml");
+        assertEquals("auto", root.get("language"));
         assertEquals(true, root.get("bstats-enabled"));
         Map<?, ?> combat = (Map<?, ?>) root.get("combat");
         Map<?, ?> explosion = (Map<?, ?>) combat.get("explosion");
@@ -45,14 +46,17 @@ class PluginResourceTest {
     }
 
     @Test
-    void chineseAndEnglishTranslationsExist() {
+    void allBundledTranslationsExistAndContainTheSameKeys() {
         Map<String, Object> chinese = yaml("lang/zh_cn.yml");
-        Map<String, Object> english = yaml("lang/en_us.yml");
+        Set<String> expected = flattenKeys(chinese, "");
 
         assertEquals("[幻翼苦力怕]</dark_aqua> <dark_gray>»</dark_gray> ",
                 ((String) chinese.get("prefix")).substring("<dark_aqua>".length()));
-        assertTrue(((Map<?, ?>) english.get("command")).containsKey("spawn-success"));
-        assertEquals(flattenKeys(chinese, ""), flattenKeys(english, ""));
+        for (String language : java.util.List.of(
+                "en_us", "zh_cn", "ja", "ko", "zh_tw", "de", "fr", "es", "ru")) {
+            Map<String, Object> translations = yaml("lang/" + language + ".yml");
+            assertEquals(expected, flattenKeys(translations, ""), language);
+        }
     }
 
     @Test

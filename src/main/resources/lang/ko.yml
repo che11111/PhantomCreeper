@@ -1,0 +1,54 @@
+prefix: "<dark_aqua>[팬텀 크리퍼]</dark_aqua> <dark_gray>»</dark_gray> "
+
+command:
+  player-only: "<red>이 하위 명령은 플레이어만 사용할 수 있습니다.</red>"
+  usage: "<yellow>사용법: /phantomcreeper <stats|spawn [플레이어]|removeall|reload|info|engine></yellow>"
+  spawn-success: "<green>팬텀 크리퍼를 소환했습니다.</green>"
+  spawn-failed: "<red>해당 위치에 팬텀 크리퍼를 소환할 수 없습니다.</red>"
+  player-not-found: "<red>온라인 플레이어 <white><player></white>을(를) 찾을 수 없습니다.</red>"
+  no-permission: "<red>이 명령을 사용할 권한이 없습니다.</red>"
+  removed: "<yellow>팬텀 크리퍼 <white><count></white>마리를 제거했습니다.</yellow>"
+  reloaded: "<green>구성과 언어 파일을 다시 불러왔습니다.</green>"
+  reload-failed: "<red>구성을 다시 불러오지 못했습니다. 콘솔을 확인하세요.</red>"
+  info: "<gray>생존: <white><count></white>; 자연 생성: <white><natural>/<natural_limit></white>; 체력: <white><health></white>; 히트박스: <white><hitboxes></white>; 모델: <white><model></white>; 엔진: <white><engine></white>; 위치: <white><position></white>; 속도: <white><velocity></white></gray>"
+  stats: "<gray>내 통계: 팬텀 크리퍼 처치 <white><kills></white>; 팬텀 크리퍼에 의한 사망 <white><deaths></white>.</gray>"
+  engine-usage: "<yellow>사용법: /phantomcreeper engine <bettermodel|modelengine></yellow>"
+  engine-unavailable: "<red><engine> 엔진으로 전환할 수 없습니다. 사용 가능한 엔진: <available>.</red>"
+  engine-switched: "<green>모델 엔진을 <engine>으로 전환했습니다. 기존 팬텀 크리퍼를 다시 연결하는 중입니다.</green>"
+
+model:
+  loading: "모델 phantom_creeper를 불러오는 중..."
+  loaded: "<engine>을(를) 통해 모델 <model>을(를) 불러왔습니다."
+  missing: "모델 <model>을(를) 아직 사용할 수 없습니다. 임시로 바닐라 크리퍼를 사용합니다."
+  failed: "<engine> 모델을 적용하지 못했습니다. 모델 엔진 시작 로그를 확인하세요."
+
+status:
+  loaded: "불러옴"
+  waiting: "대기 중"
+
+log:
+  paper-scheduler: "Paper 스케줄러 모드를 활성화했습니다."
+  folia-scheduler: "Folia 영역 스케줄러 모드를 활성화했습니다."
+  data-directory-failed: "플러그인 데이터 디렉터리를 만들지 못했습니다."
+  stats-open-failed: "SQLite 통계 데이터베이스를 열지 못했습니다."
+  stats-save-failed: "팬텀 크리퍼 통계를 저장하지 못했습니다."
+  bstats-init-failed: "bStats를 초기화하지 못했습니다."
+  reload-failed: "구성을 다시 불러오지 못했습니다: <error>"
+  placeholder-register-failed: "PlaceholderAPI 확장을 등록하지 못했습니다."
+  placeholder-unregister-failed: "PlaceholderAPI 확장 등록을 해제하지 못했습니다."
+  spawn-failed: "팬텀 크리퍼를 소환하지 못했습니다: <error>"
+  model-resource-missing: "플러그인 JAR에 팬텀 크리퍼 모델 리소스가 없습니다."
+  model-backend-missing: "<engine>에서 사용 가능한 모델 엔진을 찾지 못했습니다. BetterModel 또는 ModelEngine 4.1.1+를 설치하세요."
+  model-backend-selected: "모델 엔진 선택: <engine>."
+  modelengine-blueprint-installed: "ModelEngine 블루프린트를 설치했습니다: <path>"
+  modelengine-blueprint-install-failed: "ModelEngine 블루프린트를 설치하지 못했습니다: <error>"
+  modelengine-invalid-model-name: "잘못된 ModelEngine 모델 이름입니다: <name>"
+  modelengine-import-incomplete: "ModelEngine이 호환 블루프린트 <name>을(를) 가져오지 못했습니다. ModelEngine 로그를 확인하세요."
+  modelengine-attach-failed: "ModelEngine 모델을 엔티티에 적용하지 못했습니다: <error>"
+  modelengine-death-effect-failed: "ModelEngine 사망 애니메이션을 재생하지 못했습니다: <error>"
+
+creature:
+  name: "<dark_gray>팬텀 크리퍼</dark_gray>"
+
+resourcepack:
+  description: "팬텀 크리퍼 리소스 팩 · 제작자: che1s"

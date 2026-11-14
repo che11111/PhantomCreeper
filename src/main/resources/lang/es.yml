@@ -1,0 +1,54 @@
+prefix: "<dark_aqua>[Creeper fantasma]</dark_aqua> <dark_gray>»</dark_gray> "
+
+command:
+  player-only: "<red>Este subcomando solo puede usarlo un jugador.</red>"
+  usage: "<yellow>Uso: /phantomcreeper <stats|spawn [jugador]|removeall|reload|info|engine></yellow>"
+  spawn-success: "<green>Se ha invocado al Creeper fantasma.</green>"
+  spawn-failed: "<red>No se pudo invocar al Creeper fantasma en esa ubicación.</red>"
+  player-not-found: "<red>No se encontró al jugador conectado <white><player></white>.</red>"
+  no-permission: "<red>No tienes permiso para usar este comando.</red>"
+  removed: "<yellow>Se eliminaron <white><count></white> Creeper(s) fantasma(s).</yellow>"
+  reloaded: "<green>Configuración y archivos de idioma recargados.</green>"
+  reload-failed: "<red>No se pudo recargar la configuración. Revisa la consola.</red>"
+  info: "<gray>Vivos: <white><count></white>; naturales: <white><natural>/<natural_limit></white>; vida: <white><health></white>; hitboxes: <white><hitboxes></white>; modelo: <white><model></white>; motor: <white><engine></white>; posición: <white><position></white>; velocidad: <white><velocity></white></gray>"
+  stats: "<gray>Tus estadísticas: Creepers fantasma eliminados <white><kills></white>; muertes causadas por Creeper fantasma <white><deaths></white>.</gray>"
+  engine-usage: "<yellow>Uso: /phantomcreeper engine <bettermodel|modelengine></yellow>"
+  engine-unavailable: "<red>No se puede cambiar a <engine>. Motores disponibles: <available>.</red>"
+  engine-switched: "<green>Motor de modelo cambiado a <engine>; se están volviendo a vincular los Creepers fantasma existentes.</green>"
+
+model:
+  loading: "Cargando el modelo phantom_creeper..."
+  loaded: "Modelo <model> cargado mediante <engine>."
+  missing: "El modelo <model> aún no está disponible; se usa temporalmente el Creeper original."
+  failed: "No se pudo adjuntar el modelo de <engine>. Revisa los registros de inicio del motor de modelos."
+
+status:
+  loaded: "cargado"
+  waiting: "esperando"
+
+log:
+  paper-scheduler: "Modo de planificador de Paper activado."
+  folia-scheduler: "Modo de planificador regional de Folia activado."
+  data-directory-failed: "No se pudo crear el directorio de datos del plugin."
+  stats-open-failed: "No se pudo abrir la base de datos de estadísticas SQLite."
+  stats-save-failed: "No se pudieron guardar las estadísticas del Creeper fantasma."
+  bstats-init-failed: "No se pudo inicializar bStats."
+  reload-failed: "No se pudo recargar la configuración: <error>"
+  placeholder-register-failed: "No se pudo registrar la expansión de PlaceholderAPI."
+  placeholder-unregister-failed: "No se pudo anular el registro de la expansión de PlaceholderAPI."
+  spawn-failed: "No se pudo invocar al Creeper fantasma: <error>"
+  model-resource-missing: "Falta el recurso del modelo Creeper fantasma en el JAR del plugin."
+  model-backend-missing: "No se encontró un motor de modelos utilizable para <engine>. Instala BetterModel o ModelEngine 4.1.1+."
+  model-backend-selected: "Motor de modelos seleccionado: <engine>."
+  modelengine-blueprint-installed: "Blueprint de ModelEngine instalado: <path>"
+  modelengine-blueprint-install-failed: "No se pudo instalar el blueprint de ModelEngine: <error>"
+  modelengine-invalid-model-name: "Nombre de modelo de ModelEngine no válido: <name>"
+  modelengine-import-incomplete: "ModelEngine no pudo importar el blueprint compatible <name>. Revisa su registro."
+  modelengine-attach-failed: "No se pudo adjuntar el modelo de ModelEngine a la entidad: <error>"
+  modelengine-death-effect-failed: "No se pudo reproducir la animación de muerte de ModelEngine: <error>"
+
+creature:
+  name: "<dark_gray>Creeper fantasma</dark_gray>"
+
+resourcepack:
+  description: "Paquete de recursos del Creeper fantasma · Autor: che1s"

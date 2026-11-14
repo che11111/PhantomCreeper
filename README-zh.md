@@ -69,14 +69,15 @@ PhantomCreeper 是一个“幻翼 + 苦力怕”复合生物：像幻翼一样�
 
 ## 完整配置说明
 
-以下为完整的 `config.yml`，每项均附带中文注释：
+内置英语、简体中文、日语、韩语、繁体中文、德语、法语、西班牙语和俄语。以下为完整的 `config.yml`：
 
 ```yaml
 # PhantomCreeper / 幻翼苦力怕
 # 修改模型设置后需重启服务器；其他配置可使用 /phantomcreeper reload。
 
-# 插件语言：zh_cn（简体中文）或 en_us（英文）。
-language: zh_cn
+# 插件语言：auto，或 lang/ 下的文件名，例如 zh_cn.yml。
+# auto 跟随服务器 Locale；无法识别时回退到 en_us.yml。
+language: auto
 
 model:
   # 渲染后端：auto、bettermodel 或 modelengine。

@@ -1,0 +1,54 @@
+prefix: "<dark_aqua>[幻翼クリーパー]</dark_aqua> <dark_gray>»</dark_gray> "
+
+command:
+  player-only: "<red>このサブコマンドはプレイヤーのみ使用できます。</red>"
+  usage: "<yellow>使用法: /phantomcreeper <stats|spawn [プレイヤー]|removeall|reload|info|engine></yellow>"
+  spawn-success: "<green>幻翼クリーパーをスポーンしました。</green>"
+  spawn-failed: "<red>その場所に幻翼クリーパーをスポーンできませんでした。</red>"
+  player-not-found: "<red>オンラインプレイヤー <white><player></white> が見つかりません。</red>"
+  no-permission: "<red>このコマンドを使用する権限がありません。</red>"
+  removed: "<yellow>幻翼クリーパーを <white><count></white> 体削除しました。</yellow>"
+  reloaded: "<green>設定と言語ファイルを再読み込みしました。</green>"
+  reload-failed: "<red>設定の再読み込みに失敗しました。コンソールを確認してください。</red>"
+  info: "<gray>生存数: <white><count></white>；自然生成: <white><natural>/<natural_limit></white>；体力: <white><health></white>；当たり判定: <white><hitboxes></white>；モデル: <white><model></white>；エンジン: <white><engine></white>；位置: <white><position></white>；速度: <white><velocity></white></gray>"
+  stats: "<gray>あなたの統計: 幻翼クリーパー撃破 <white><kills></white>；幻翼クリーパーによる死亡 <white><deaths></white>。</gray>"
+  engine-usage: "<yellow>使用法: /phantomcreeper engine <bettermodel|modelengine></yellow>"
+  engine-unavailable: "<red><engine> に切り替えられません。利用可能なエンジン: <available>。</red>"
+  engine-switched: "<green>モデルエンジンを <engine> に切り替えました。既存の幻翼クリーパーを再バインドしています。</green>"
+
+model:
+  loading: "モデル phantom_creeper を読み込んでいます..."
+  loaded: "モデル <model> を <engine> 経由で読み込みました。"
+  missing: "モデル <model> はまだ利用できません。一時的にバニラのクリーパーを使用します。"
+  failed: "<engine> モデルを適用できませんでした。モデルエンジンの起動ログを確認してください。"
+
+status:
+  loaded: "読み込み済み"
+  waiting: "待機中"
+
+log:
+  paper-scheduler: "Paper スケジューラモードを有効化しました。"
+  folia-scheduler: "Folia リージョンスケジューラモードを有効化しました。"
+  data-directory-failed: "プラグインデータディレクトリを作成できませんでした。"
+  stats-open-failed: "SQLite 統計データベースを開けませんでした。"
+  stats-save-failed: "幻翼クリーパーの統計を保存できませんでした。"
+  bstats-init-failed: "bStats を初期化できませんでした。"
+  reload-failed: "設定を再読み込みできませんでした: <error>"
+  placeholder-register-failed: "PlaceholderAPI 拡張を登録できませんでした。"
+  placeholder-unregister-failed: "PlaceholderAPI 拡張を解除できませんでした。"
+  spawn-failed: "幻翼クリーパーをスポーンできませんでした: <error>"
+  model-resource-missing: "プラグイン JAR に幻翼クリーパーのモデルリソースがありません。"
+  model-backend-missing: "<engine> で利用可能なモデルエンジンが見つかりません。BetterModel または ModelEngine 4.1.1+ をインストールしてください。"
+  model-backend-selected: "モデルエンジンを選択しました: <engine>。"
+  modelengine-blueprint-installed: "ModelEngine ブループリントをインストールしました: <path>"
+  modelengine-blueprint-install-failed: "ModelEngine ブループリントをインストールできませんでした: <error>"
+  modelengine-invalid-model-name: "ModelEngine モデル名が無効です: <name>"
+  modelengine-import-incomplete: "ModelEngine は互換ブループリント <name> をインポートできませんでした。ModelEngine のログを確認してください。"
+  modelengine-attach-failed: "ModelEngine モデルをエンティティに適用できませんでした: <error>"
+  modelengine-death-effect-failed: "ModelEngine の死亡アニメーションを再生できませんでした: <error>"
+
+creature:
+  name: "<dark_gray>幻翼クリーパー</dark_gray>"
+
+resourcepack:
+  description: "幻翼クリーパーリソースパック · 作者: che1s"

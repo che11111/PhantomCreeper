@@ -69,13 +69,14 @@ Both variables are player-specific and return `0` when no player context is avai
 
 ## Full Configuration
 
-The complete `config.yml` is shown below. Each option includes an English comment:
+Bundled languages are English, Simplified Chinese, Japanese, Korean, Traditional Chinese, German, French, Spanish, and Russian. The complete `config.yml` is shown below:
 
 ```yaml
 # Restart the server after changing model settings; other settings can use /phantomcreeper reload.
 
-# Plugin language: zh_cn (Simplified Chinese) or en_us (English).
-language: zh_cn
+# Plugin language: auto, or a file name under lang/ such as zh_cn.yml.
+# auto follows the server Locale and falls back to en_us.yml when unrecognized.
+language: auto
 
 model:
   # Renderer backend: auto, bettermodel, or modelengine.

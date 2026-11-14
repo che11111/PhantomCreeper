@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Locale;
 import java.util.Map;
 
@@ -29,32 +30,47 @@ public final class Language {
     }
 
     public void reload(String languageCode) {
-        String normalized = languageCode == null || languageCode.isBlank()
-                ? "zh_cn"
-                : languageCode.toLowerCase(Locale.ROOT);
         File languageFolder = new File(plugin.getDataFolder(), "lang");
         if (!languageFolder.isDirectory() && !languageFolder.mkdirs()) {
             throw new IllegalStateException();
         }
-        copyDefault("lang/zh_cn.yml");
-        copyDefault("lang/en_us.yml");
-
-        File selected = new File(languageFolder, normalized + ".yml");
-        if (!selected.isFile()) {
-            selected = new File(languageFolder, "zh_cn.yml");
+        for (String locale : LocaleResolver.BUNDLED_LOCALES) {
+            copyDefault("lang/" + locale + ".yml");
         }
-        strings = YamlConfiguration.loadConfiguration(selected);
-        String bundledName = selected.getName();
-        try (InputStream bundled = plugin.getResource("lang/" + bundledName)) {
+
+        String selectedLocale;
+        if (LocaleResolver.isAuto(languageCode)) {
+            selectedLocale = LocaleResolver.detectServerLocale(Locale.getDefault(), System.getenv());
+        } else {
+            String known = LocaleResolver.knownLocale(languageCode);
+            String custom = LocaleResolver.normalize(languageCode);
+            File customFile = new File(languageFolder, custom + ".yml");
+            if (known != null) {
+                selectedLocale = known;
+            } else if (LocaleResolver.isSafeCustomName(languageCode) && customFile.isFile()) {
+                selectedLocale = custom;
+            } else {
+                plugin.getLogger().warning(
+                        "Unsupported language '" + languageCode + "', falling back to en_us.yml.");
+                selectedLocale = LocaleResolver.DEFAULT_LOCALE;
+            }
+        }
+
+        File selected = new File(languageFolder, selectedLocale + ".yml");
+        YamlConfiguration external = YamlConfiguration.loadConfiguration(selected);
+        try {
+            YamlConfiguration bundled = bundled(selectedLocale);
             if (bundled != null) {
-                YamlConfiguration defaults = YamlConfiguration.loadConfiguration(
-                        new InputStreamReader(bundled, StandardCharsets.UTF_8));
-                boolean migrated = migrateLegacyValues(strings, defaults, bundledName);
-                strings.setDefaults(defaults);
+                boolean migrated = migrateLegacyValues(external, bundled, selected.getName());
                 if (migrated) {
-                    saveMigratedLanguage(strings, selected);
+                    saveMigratedLanguage(external, selected);
                 }
             }
+            strings = merge(
+                    bundled(LocaleResolver.DEFAULT_LOCALE),
+                    bundled,
+                    external
+            );
         } catch (Exception exception) {
             throw new IllegalStateException(exception);
         }
@@ -82,7 +98,55 @@ public final class Language {
     private void copyDefault(String resourcePath) {
         File target = new File(plugin.getDataFolder(), resourcePath);
         if (!target.isFile()) {
+            migrateLegacyFile(target);
+        }
+        if (!target.isFile()) {
             plugin.saveResource(resourcePath, false);
+        }
+    }
+
+    private static YamlConfiguration bundled(String locale) throws Exception {
+        String name = "lang/" + locale + ".yml";
+        try (InputStream stream = Language.class.getClassLoader().getResourceAsStream(name)) {
+            if (stream == null) {
+                return null;
+            }
+            return YamlConfiguration.loadConfiguration(
+                    new InputStreamReader(stream, StandardCharsets.UTF_8));
+        }
+    }
+
+    private static YamlConfiguration merge(YamlConfiguration... sources) {
+        YamlConfiguration merged = new YamlConfiguration();
+        for (YamlConfiguration source : sources) {
+            if (source == null) {
+                continue;
+            }
+            for (String key : source.getKeys(true)) {
+                if (source.isString(key)) {
+                    merged.set(key, source.getString(key));
+                }
+            }
+        }
+        return merged;
+    }
+
+    private static void migrateLegacyFile(File target) {
+        String legacy = switch (target.getName()) {
+            case "en_us.yml" -> "en_US.yml";
+            case "zh_cn.yml" -> "zh_CN.yml";
+            default -> null;
+        };
+        if (legacy == null) {
+            return;
+        }
+        File source = new File(target.getParentFile(), legacy);
+        if (!source.isFile()) {
+            return;
+        }
+        try {
+            Files.copy(source.toPath(), target.toPath());
+        } catch (Exception ignored) {
         }
     }
 

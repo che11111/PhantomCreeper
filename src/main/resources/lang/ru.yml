@@ -1,0 +1,54 @@
+prefix: "<dark_aqua>[Фантомный крипер]</dark_aqua> <dark_gray>»</dark_gray> "
+
+command:
+  player-only: "<red>Эту подкоманду может использовать только игрок.</red>"
+  usage: "<yellow>Использование: /phantomcreeper <stats|spawn [игрок]|removeall|reload|info|engine></yellow>"
+  spawn-success: "<green>Фантомный крипер создан.</green>"
+  spawn-failed: "<red>Не удалось создать фантомного крипера в этом месте.</red>"
+  player-not-found: "<red>Игрок <white><player></white> не найден в сети.</red>"
+  no-permission: "<red>У вас нет разрешения на использование этой команды.</red>"
+  removed: "<yellow>Удалено фантомных криперов: <white><count></white>.</yellow>"
+  reloaded: "<green>Конфигурация и языковые файлы перезагружены.</green>"
+  reload-failed: "<red>Не удалось перезагрузить конфигурацию. Проверьте консоль.</red>"
+  info: "<gray>Живых: <white><count></white>; естественных: <white><natural>/<natural_limit></white>; здоровье: <white><health></white>; хитбоксы: <white><hitboxes></white>; модель: <white><model></white>; движок: <white><engine></white>; позиция: <white><position></white>; скорость: <white><velocity></white></gray>"
+  stats: "<gray>Ваша статистика: убито фантомных криперов — <white><kills></white>; смертей от фантомных криперов — <white><deaths></white>.</gray>"
+  engine-usage: "<yellow>Использование: /phantomcreeper engine <bettermodel|modelengine></yellow>"
+  engine-unavailable: "<red>Не удалось переключиться на <engine>. Доступные движки: <available>.</red>"
+  engine-switched: "<green>Движок моделей переключён на <engine>; существующие фантомные криперы привязываются заново.</green>"
+
+model:
+  loading: "Загрузка модели phantom_creeper..."
+  loaded: "Модель <model> загружена через <engine>."
+  missing: "Модель <model> пока недоступна; временно используется обычный крипер."
+  failed: "Не удалось применить модель <engine>. Проверьте журнал запуска движка моделей."
+
+status:
+  loaded: "загружено"
+  waiting: "ожидание"
+
+log:
+  paper-scheduler: "Включён режим планировщика Paper."
+  folia-scheduler: "Включён режим регионального планировщика Folia."
+  data-directory-failed: "Не удалось создать каталог данных плагина."
+  stats-open-failed: "Не удалось открыть базу статистики SQLite."
+  stats-save-failed: "Не удалось сохранить статистику фантомных криперов."
+  bstats-init-failed: "Не удалось инициализировать bStats."
+  reload-failed: "Не удалось перезагрузить конфигурацию: <error>"
+  placeholder-register-failed: "Не удалось зарегистрировать расширение PlaceholderAPI."
+  placeholder-unregister-failed: "Не удалось отменить регистрацию расширения PlaceholderAPI."
+  spawn-failed: "Не удалось создать фантомного крипера: <error>"
+  model-resource-missing: "В JAR плагина отсутствует ресурс модели фантомного крипера."
+  model-backend-missing: "Не найден рабочий движок моделей для <engine>. Установите BetterModel или ModelEngine 4.1.1+."
+  model-backend-selected: "Выбран движок моделей: <engine>."
+  modelengine-blueprint-installed: "Чертёж ModelEngine установлен: <path>"
+  modelengine-blueprint-install-failed: "Не удалось установить чертёж ModelEngine: <error>"
+  modelengine-invalid-model-name: "Недопустимое имя модели ModelEngine: <name>"
+  modelengine-import-incomplete: "ModelEngine не смог импортировать совместимый чертёж <name>. Проверьте журнал ModelEngine."
+  modelengine-attach-failed: "Не удалось применить модель ModelEngine к сущности: <error>"
+  modelengine-death-effect-failed: "Не удалось воспроизвести анимацию смерти ModelEngine: <error>"
+
+creature:
+  name: "<dark_gray>Фантомный крипер</dark_gray>"
+
+resourcepack:
+  description: "Ресурспак фантомного крипера · Автор: che1s"
